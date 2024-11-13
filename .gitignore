@@ -1,1 +1,9 @@
-/.idea/
+**/node_modules/
+**/dist/
+/.idea
+
+.env
+.env.*
+/docker/volume/
+
+**/http-client.private.env.json
