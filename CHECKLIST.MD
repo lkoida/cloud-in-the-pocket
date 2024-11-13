@@ -53,3 +53,17 @@ awslocal rb s3://test-bucket --force
 _Proof that such kind of work is ok to know the basics of aws cli 
 but completely not sufficient to deal with complex infrastructure settings_ 
 </details>
+
+<details>
+<summary>02-todo</summary>
+
+## Step two
+
+* [ ] Scripts directory created
+* [ ] Some scripts added form the start
+
+### Interactive part
+
+* [ ] Add script for sqs, bucket and run it from the terminal
+* [ ] Describe and show with example of pre-created script for API Gateway why it is not optimal 
+</details>

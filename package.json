@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "containers:start": "docker compose -f docker/docker-compose.yaml up -d --remove-orphans",
+    "containers:stop": "docker compose -f docker/docker-compose.yaml down",
     "cloud:start": "pm2 start ecosystem.config.cjs",
     "cloud:stop": "pm2 stop ecosystem.config.cjs",
     "cloud:delete": "pm2 delete ecosystem.config.cjs"

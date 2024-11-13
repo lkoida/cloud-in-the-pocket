@@ -1,0 +1,47 @@
+name: localstack-use-case
+services:
+  localstack:
+    container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-main}"
+    image: localstack/localstack-pro:3.7
+    ports:
+      - "127.0.0.1:4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
+      - DEBUG=${DEBUG:-0} # main debug state of the localstack
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LAMBDA_REMOVE_CONTAINERS=0 # do not remove lambda containers after stop
+      - LAMBDA_DOCKER_NETWORK=dev # specify the common network for lambdas - make them able to communicate with another services
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN- } # token to enable all features of localstack
+      - DISABLE_EVENTS=${DISABLE_EVENTS:-0} # disable events propagated to localstack account
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+    networks:
+      - dev
+
+  postgres:
+    image: postgres:16
+    container_name: service_db
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    volumes:
+      - postgres-todo:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -U postgres
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dev
+
+volumes:
+    postgres-todo:
+
+networks:
+  dev:
+    name: dev
