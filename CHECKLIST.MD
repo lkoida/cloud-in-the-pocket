@@ -76,3 +76,17 @@ but completely not sufficient to deal with complex infrastructure settings_
 * [ ] Add script for sqs, bucket and run it from the terminal
 * [ ] Describe and show with example of pre-created script for API Gateway why it is not optimal 
 </details>
+
+<details>
+<summary>03-todo</summary>
+
+## Step three
+
+### Work with localstack lifecycle 
+
+### Interactive part
+
+* [ ] Update docker-compose to have the localstack scripts directory mounted
+* [ ] Move there some scripts and describe how this stuff works
+* [ ] Show why this already a better solution but still there is a room for improvement
+</details>
