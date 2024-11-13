@@ -1,0 +1,31 @@
+### REGISTER USER
+< {%
+    import { preRegister } from "./scripts/pre-request.js";
+
+    const users = preRegister()
+
+    request.variables.set("users", users);
+%}
+POST {{host}}/{{api_key}}/{{host-segment}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "{{$.users..name}}",
+  "email": "{{$.users..email}}",
+  "password": "{{$.users..password}}"
+}
+
+### LOGIN USERS
+POST {{host}}/{{api_key}}/{{host-segment}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "john.doe"
+}
+
+> {%
+    import { authResponse } from "./scripts/response.js";
+
+    authResponse(jsonPath)
+%}

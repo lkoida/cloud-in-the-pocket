@@ -1,0 +1,29 @@
+### GET INFO ABOUT LOCALSTACK SERVICES
+GET http://localhost:4566/_localstack/info
+Accept: application/json
+
+### LOCALSTACK HEALTH
+GET http://localhost:4566/_localstack/health
+Accept: application/json
+
+
+### LIST AVAILABLE LAMBDA RUNTIMES
+GET http://localhost.localstack.cloud:4566/_aws/lambda/runtimes?filter=all
+Accept: application/json
+
+### GET SQS MESSAGES
+GET http://localhost.localstack.cloud:4566/_aws/sqs/messages?
+    QueueUrl=https://sqs.eu-west-2.localhost.localstack.cloud/000000000000/todo-list-share-queue.fifo
+Accept: application/json
+
+
+### GET EMAILS SENT
+GET http://localhost.localstack.cloud:4566/_aws/ses
+Accept: application/json
+
+
+### DROP EMAILS FORM THE SES
+DELETE http://localhost.localstack.cloud:4566/_aws/ses
+Accept: application/json
+
+

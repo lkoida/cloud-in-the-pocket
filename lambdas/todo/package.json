@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "todo lambda",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "esbuild --bundle src/app.js --platform=node --outfile=dist/app.js --watch",
+    "build": "esbuild --bundle src/app.js --platform=node --outfile=dist/app.js"
+  },
+  "author": "leonidkoida@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "esbuild": "^0.23.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.675.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "postgres": "^3.4.4"
+  }
+}

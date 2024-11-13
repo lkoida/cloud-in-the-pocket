@@ -1,0 +1,23 @@
+{
+  "name": "cloud-in-the-pocket",
+  "version": "1.0.0",
+  "description": "source code for presentation dedicated to local development of AWS based applications",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "cloud:start": "pm2 start ecosystem.config.cjs",
+    "cloud:stop": "pm2 stop ecosystem.config.cjs",
+    "cloud:delete": "pm2 delete ecosystem.config.cjs"
+  },
+  "keywords": [
+    "aws",
+    "localstack",
+    "cloud",
+    "presentation"
+  ],
+  "author": "leonidkoida@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "pm2": "^5.4.2"
+  }
+}

@@ -1,0 +1,30 @@
+### POST URL TO PRESIGN
+### all this file should be implemented on presentation time
+### I have to provide more images (have to put them into presentations folder to refer later)
+< {%
+    request.variables.set('todoId', client.global.get('todo_id'))
+%}
+
+POST {{host}}/{{api_key}}/{{host-segment}}/attachments/presign
+Authorization: {{auth}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "todoId": {{todoId}},
+  "toPresign": [
+    "img_1.png"
+  ]
+}
+
+> {%
+    const data = jsonPath(response.body, '$')
+
+    client.global.set("data", data)
+%}
+
+### SEND PRESIGN URL WITH FILE
+PUT {{$.data..url}}
+Content-Type: image/png
+
+< ./files/img.png

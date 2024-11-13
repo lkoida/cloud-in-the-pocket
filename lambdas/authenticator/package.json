@@ -1,0 +1,28 @@
+{
+  "name": "authenticator",
+  "version": "1.0.0",
+  "description": "auth lambda provider",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "esbuild --bundle src/app.js --platform=node --outfile=dist/app.js --watch",
+    "build": "esbuild --bundle src/app.js --platform=node --outfile=dist/app.js"
+  },
+  "keywords": [
+    "lambda",
+    "authentication"
+  ],
+  "author": "leonidkoida@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@aws-sdk/types": "^3.664.0",
+    "@types/aws-lambda": "^8.10.145",
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "postgres": "^3.4.4"
+  }
+}

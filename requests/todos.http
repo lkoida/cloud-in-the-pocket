@@ -1,0 +1,95 @@
+### POST TODO LIST FOR USER
+POST {{host}}/{{api_key}}/{{host-segment}}/todo-lists
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "title": "My todo list - #{{$random.alphabetic(5)}}",
+  "description": "{{$random.alphanumeric(8)}}"
+}
+
+> {%
+    const todoListId = jsonPath(response.body, '$[0].id')
+    client.global.set('todo_list_id', todoListId)
+%}
+
+### GET ALL TODO LISTS BY USER ID
+GET {{host}}/{{api_key}}/{{host-segment}}/todo-lists
+Authorization: {{auth}}
+Accept: application/json
+
+> {%
+    client.global.set('todo_list_id', jsonPath(response.body, '$[0].id'))
+%}
+
+### CREATE NEW TODO IN LIST
+< {%
+    import { createNewTodoInList } from "./scripts/pre-request.js";
+
+    const dueDate = createNewTodoInList()
+
+    request.variables.set("dueDate", dueDate);
+%}
+POST {{host}}/{{api_key}}/{{host-segment}}/todo-lists/{{todo_list_id}}/todos
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "My {{$random.integer()}} todo",
+  "description": "Some long description",
+  "dueDate": "{{dueDate}}"
+}
+
+> {%
+    import { setTodoId } from "./scripts/response.js";
+
+    setTodoId(jsonPath)
+%}
+
+### GET TODOS FORM THE GIVEN LIST
+GET {{host}}/{{api_key}}/{{host-segment}}/todo-lists/{{todo_list_id}}/todos
+Authorization: {{auth}}
+Accept: application/json
+
+> {%
+    const todoID = jsonPath(response.body, '$[0].id')
+    client.global.set('todo_id', todoID)
+%}
+
+### UPDATE TODO
+PUT {{host}}/{{api_key}}/{{host-segment}}/todos/{{todo_id}}
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "My updated todo {{$random.integer()}}",
+  "description": "Mu updated description: {{$random.alphanumeric(10)}}"
+}
+
+
+### SHARE THE TODO LIST WITH ANOTHER USER
+@email_1="william.brown@example.com"
+@email_2="jackie.chan@mail.com"
+POST {{host}}/{{api_key}}/{{host-segment}}/todo-lists/{{todo_list_id}}/share
+Authorization: {{auth}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "emails": [
+    "{{email_1}}",
+    "{{email_2}}"
+  ]
+}
+
+###GET SHARED TODO LIST
+GET {{host}}/{{api_key}}/{{host-segment}}/todo-lists/{{todo_list_id}}/shared?
+    email={{email_1}}
+Accept: application/json
+
+### DELETE TODO
+DELETE {{host}}/{{api_key}}/{{host-segment}}/todos/{{todo_id}}
+Authorization: {{auth}}
+Accept: application/json

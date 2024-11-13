@@ -1,0 +1,32 @@
+@endpoint=users/me
+
+### GET USERS
+GET {{host}}/{{api_key}}/{{host-segment}}/users
+Authorization: {{auth}}
+
+> {%
+    const usersIds = jsonPath(response.body, "$[*].id")
+    client.log(usersIds)
+%}
+
+### GET USERS BY ID
+GET {{host}}/{{api_key}}/{{host-segment}}/{{endpoint}}
+Authorization: {{auth}}
+Accept: application/json
+
+
+### PUT USERS
+### this should be implemented in API Gateway and Lambda
+PUT {{host}}/{{api_key}}/{{host-segment}}/{{endpoint}}
+Content-Type: application/json
+Accept: application/json
+Authorization: {{auth}}
+
+{
+  "name": "User #{{$random.integer(1, 1000)}}"
+}
+
+### DELETE USERS
+DELETE {{host}}/{{api_key}}/{{host-segment}}/{{endpoint}}
+Accept: application/json
+Authorization: {{auth}}
