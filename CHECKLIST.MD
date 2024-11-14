@@ -82,7 +82,17 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 ## Step three
 
-### Work with localstack lifecycle 
+### Work with localstack lifecycle stages and hooks
+
+```
+/etc
+└── localstack
+    └── init
+    ├── boot.d           <-- executed in the container before localstack starts
+    ├── ready.d          <-- executed when localstack becomes ready
+    ├── shutdown.d       <-- executed when localstack shuts down
+    └── start.d          <-- executed when localstack starts up
+```
 
 ### Interactive part
 
