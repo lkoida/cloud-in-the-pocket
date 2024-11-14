@@ -11,6 +11,7 @@
   * [ ] aws
   * [ ] aws credentials and profiles created
   * [ ] awslocal
+  * [ ] localstack account created and activated hobby plan (show in browser)
 
 
 __Check the versions of the tools installed__
@@ -35,19 +36,27 @@ awslocal s3 mb s3://test-bucket
 ```
 ```shell
 #check if bucket is created
-awslocal s3 ls --recursive
+awslocal s3 ls
 ```
 
 ```shell
-#upload file to the bucket
-awslocal s3 cp ./ecosystem.config.js s3://test-bucket/ecosystem.config.js
+# upload file to the bucket
+awslocal s3 cp "${PWD}/ecosystem.config.cjs" s3://test-bucket/ecosystem.config.cjs
+```
 
-#access image form the browser using the localstack api
+```shell
+# stream file into stdout in terminal
+awslocal s3 cp s3://test-bucket/ecosystem.config.cjs -
+```
+
+```shell
+# download file from s3 to local directory 
+awslocal s3 cp awslocal s3 cp s3://test-bucket/ecosystem.config.cjs ecosystem.config_downloaded.cjs 
 ```
 
 ```shell
 #destroy the bucket (force to remove bucket with any images in it)
-awslocal rb s3://test-bucket --force
+awslocal s3 rb s3://test-bucket --force
 ```
 
 _Proof that such kind of work is ok to know the basics of aws cli 
