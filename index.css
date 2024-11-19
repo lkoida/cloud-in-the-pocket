@@ -1,0 +1,16 @@
+:root {
+    font-size: 1rem;
+    font-family: "Dava Sans", sans-serif;
+}
+
+h1 {
+    color: #ff5640;
+}
+
+details > details[open] {
+    border-top: 1px solid #dadada;
+}
+
+summary::marker {
+    color: #ff5640;
+}
