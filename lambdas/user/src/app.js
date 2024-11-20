@@ -1,5 +1,4 @@
-import { deleteUser, getUserById, getUsers, updateUser } from "./controllers";
-
+import {deleteUser, getUserById, getUsers} from "./controllers";
 
 /**
  *
@@ -32,9 +31,7 @@ export const handler = async (event, context) => {
             case "[GET]/users/me":
                 response = await getUserById({id: userId});
                 break;
-            case "[PUT]/users/me":// TODO maybe this could be a good example of API Gateway and Lambda update
-                response = await updateUser({id: userId, ...JSON.parse(event.body)});
-                break;
+            // TODO implement the [PUT]/users/me method  using updateUser() from db
             case "[DELETE]/users/me":
                 response = await deleteUser({id: userId});
                 break;
