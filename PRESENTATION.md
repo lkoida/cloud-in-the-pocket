@@ -1,30 +1,3 @@
-<style>
-:root {
-    font-size: 1rem;
-    font-family: "Dava Sans", sans-serif;
-    color-scheme: light dark;
-}
-
-h1 {
-    text-align: center;
-    color: #ff5640;
-}
-
-details > details[open] {
-    border-top: 1px solid #dadada;
-}
-
-summary::marker {
-    color: #ff5640;
-}
-
-img {
-max-width: 700px;
-height: auto;
-display: block;
-}
-</style>
-
 # Cloud in the Pocket
 
 <details name="branch">
