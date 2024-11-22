@@ -58,6 +58,7 @@ but completely not sufficient to deal with complex infrastructure settings_
 </details>
 </details>
 
+---
 
 <details name="branch" open>
     <summary style="font-size: 32px;">02 - Primitive automation example</summary>
