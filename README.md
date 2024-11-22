@@ -112,7 +112,7 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 ---
 
-<details name="branch" open>
+<details name="branch">
 <summary style="font-size: 32px">04 - Automation Evolution, provide IaC solution</summary>
 
 * Introduce the __CDK__
@@ -142,3 +142,37 @@ but completely not sufficient to deal with complex infrastructure settings_
 </details>
 
 ---
+
+
+<details name="branch" open>
+    <summary style="font-size: 32px">05 - Jump Into Prepared Code</summary>
+
+* Have all previously created code in place
+* Describe what already created - just to save time
+    * Show the working solution for existing code of application
+    * Run the possible requests scenarios
+
+<details style="margin-inline-start:24px">
+  <summary style="font-size: 24px">Interactive part</summary>
+
+### Let's implement the next missing functionality
+
+1. Add possibility to users to update information about them
+    1. PUT method in users lambda
+    2. Add resources in ApiGateway
+    3. Update integrations if needed
+    4. ... check for other steps and annotate them
+    5. Rebuild CDK-LOCAL
+2. Protect existing routes / lambdas using Lambda Authorizer ![Secure-API-Gateway-b-Figure-1.png](presentation/img/Secure-API-Gateway-b-Figure-1.png)
+    1. Create Lambda to validate the request
+    2. Describe what the policies are
+    3. Update ApiGateway configuration
+    4. Rebuild CDK-LOCAL
+3. Add possibility to store the attachments
+    1. Create Attachments lambda
+    2. Explain the flow of the file upload form the user and S3 perspective. Explain the constraints of the ApiGateway
+       and Lambda
+
+   ![Secure-API-Gateway-b-Figure-1.png](presentation/img/Secure-API-Gateway-b-Figure-1.png)
+</details>
+</details>
