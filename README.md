@@ -60,7 +60,7 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 ---
 
-<details name="branch" open>
+<details name="branch">
     <summary style="font-size: 32px;">02 - Primitive automation example</summary>
 
 * Describe `scripts` directory created in the root of the project
@@ -72,6 +72,36 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 * Run all scripts related to the api gateway in `/scripts` directory in a sequence
 * Describe and show with example of pre-created script for API Gateway why it is not optimal
+
+</details>
+</details>
+
+---
+
+<details name="branch" open>
+    <summary style="font-size: 32px">03 - Continue automation, use localstack lifecycle stages</summary>
+
+### Work with LocalStack lifecycle stages and hooks
+
+```
+/etc
+└── localstack
+    └── init
+        ├── boot.d           <-- executed in the container before localstack starts
+        ├── ready.d          <-- executed when localstack becomes ready
+        ├── shutdown.d       <-- executed when localstack shuts down
+        └── start.d          <-- executed when localstack starts up
+```
+
+<details style="margin-inline-start:24px">
+ <summary style="font-size: 24px;">Interactive part</summary>
+
+* Update docker-compose to have the localstack scripts directory mounted
+* Move there some scripts and describe how this stuff works
+* Make all files in `localstack_scripts` directory executable by running `chmod -R +x docker/localstack_scripts`
+* Add `"lambda:create": "./scripts/4_create-lambda.sh"` to npm scripts section
+* Add authenticator and users lambdas to localstack from the `npm scripts`
+* Show why this already a better solution but still there is a room for improvement
 
 </details>
 </details>
