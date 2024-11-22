@@ -78,7 +78,7 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 ---
 
-<details name="branch" open>
+<details name="branch">
     <summary style="font-size: 32px">03 - Continue automation, use localstack lifecycle stages</summary>
 
 ### Work with LocalStack lifecycle stages and hooks
@@ -106,6 +106,30 @@ but completely not sufficient to deal with complex infrastructure settings_
     chmod -R +x docker/localstack_scripts
   ```
 * Show why this already a better solution but still there is a room for improvement
+
+</details>
+</details>
+
+---
+
+<details name="branch" open>
+<summary style="font-size: 32px">04 - Automation Evolution, provide IaC solution</summary>
+
+* Introduce the __CDK__
+  * Explain what is this
+  * Check the prerequisites
+
+```shell
+
+echo "CDK - $(cdk --version)" && \
+echo "CDK-LOCAL - $(cdklocal --version)"
+```
+
+<details style="margin-inline-start:24px">
+<summary style="font-size: 24px">Interactive part</summary>
+
+* Init the cdk application `mkdir app && cd app && cdk init app --language typescript`
+* Jump to the source for a bit
 
 </details>
 </details>
