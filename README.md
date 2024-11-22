@@ -1,6 +1,6 @@
 # Cloud in the Pocket
 
-<details name="branch" open>
+<details name="branch">
     <summary style="font-size: 32px;">01 - Check the prerequisites and run the CLI examples</summary>
 
 * Show the initial code and explain it
@@ -57,3 +57,24 @@ _Proof that such kind of work is ok to know the basics of aws cli
 but completely not sufficient to deal with complex infrastructure settings_
 </details>
 </details>
+
+
+<details name="branch" open>
+    <summary style="font-size: 32px;">02 - Primitive automation example</summary>
+
+* Describe `scripts` directory created in the root of the project
+* Some scripts added form the start
+
+<details style="margin-inline-start:24px">
+ <summary style="font-size: 24px">Interactive Part</summary>
+
+### Interactive part
+
+* Run all scripts in `/scripts` directory in a sequence
+* Check that /register /login /users endpoint are working
+* Describe and show with example of pre-created script for API Gateway why it is not optimal
+
+</details>
+</details>
+
+---
