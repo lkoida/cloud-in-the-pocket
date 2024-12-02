@@ -7,25 +7,31 @@
 
 awslocal secretsmanager create-secret \
   --name "DB_CREDENTIALS" \
+  --region "eu-west-2" \
   --secret-string file://./scripts/example.secrets.json
 
 awslocal secretsmanager create-secret \
  --name "API_SECRET" \
+ --region "eu-west-2" \
  --secret-string "supersecret"
 
 awslocal secretsmanager create-secret \
  --name "REGION" \
+ --region "eu-west-2" \
  --secret-string "eu-west-2"
 
 awslocal secretsmanager create-secret \
  --name "ENDPOINT" \
+ --region "eu-west-2" \
  --secret-string "localhost.localstack.cloud:4566"
 
 awslocal secretsmanager create-secret \
  --name "BUCKET" \
+ --region "eu-west-2" \
  --secret-string "todo-app-bucket"
 
 awslocal secretsmanager create-secret \
 --name "SALT" \
+--region "eu-west-2" \
 --secret-string ";:5}%(YD[M?R?gXrie9[eP4\\2o*+lqZE"
 

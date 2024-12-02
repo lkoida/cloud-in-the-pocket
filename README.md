@@ -149,8 +149,17 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 * Have all previously created code in place
 * Describe what already created - just to save time
-    * Show the working solution for existing code of application
-    * Run the possible requests scenarios
+  * Add helpers into root package json for:
+    * secrets
+    * emails
+  * Run docker containers
+    * Run dump.sql file
+    * Run secrets.sh (explain)
+    * Run emails.sh (explain)
+  * Run CDK bootstrap
+  * Run synth and build for existing part
+  * Show the working solution for existing code of application
+  * Run the possible requests scenarios
 
 <details style="margin-inline-start:24px">
   <summary style="font-size: 24px">Interactive part</summary>
