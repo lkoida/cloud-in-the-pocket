@@ -143,7 +143,6 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 ---
 
-
 <details name="branch" open>
     <summary style="font-size: 32px">05 - Jump Into Prepared Code</summary>
 
@@ -182,6 +181,6 @@ but completely not sufficient to deal with complex infrastructure settings_
     2. Explain the flow of the file upload form the user and S3 perspective. Explain the constraints of the ApiGateway
        and Lambda
 
-   ![Secure-API-Gateway-b-Figure-1.png](presentation/img/Secure-API-Gateway-b-Figure-1.png)
+   ![Secure-API-Gateway-b-Figure-1.png](presentation/img/s3-2.png)
 </details>
 </details>
