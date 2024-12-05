@@ -4,20 +4,21 @@
     <summary style="font-size: 32px;">01 - Check the prerequisites and run the CLI examples</summary>
 
 * Show the initial code and explain it
-* Check that all prerequisites are installed
-    * Docker
-    * aws
-    * aws credentials and profiles created
-    * awslocal
-    * localstack account created and activated hobby plan (show in browser)
-
-```shell
-
-# Check the versions of the tools installed
-docker -v && \
-aws --version  && \
-awslocal --version
-```
+  * Check that all prerequisites are installed
+      * Docker
+      * aws
+      * awslocal
+        ```shell
+          docker -v && \
+          aws --version  && \
+          awslocal --version
+        ```
+      * aws credentials and profiles created
+        ```shell
+          cat ~/.aws/config && cat ~/.aws/credentials
+        ```
+      * localstack account created and activated hobby plan
+      [LocalStack Dashboard -->](https://app.localstack.cloud/workspace/members) 
 
 <details style="margin-inline-start:24px">
     <summary style="font-size: 24px">Interactive Part</summary>
@@ -30,33 +31,27 @@ awslocal --version
     * Show the `cli` examples of the bucket creation
 
 ```shell
-# let's create a test bucket in the localstack
-awslocal s3 mb s3://test-bucket
+  awslocal s3 mb s3://test-bucket
 ```
 
 ```shell
-#check if bucket is created
-awslocal s3 ls
+  awslocal s3 ls
 ```
 
 ```shell
-# upload file to the bucket
-awslocal s3 cp "${PWD}/ecosystem.config.cjs" s3://test-bucket/ecosystem.config.cjs
+  awslocal s3 cp "${PWD}/ecosystem.config.cjs" s3://test-bucket/ecosystem.config.cjs
 ```
 
 ```shell
-# stream file into stdout in terminal
-awslocal s3 cp s3://test-bucket/ecosystem.config.cjs -
+  awslocal s3 cp s3://test-bucket/ecosystem.config.cjs -
 ```
 
 ```shell
-# download file from s3 to local directory 
-awslocal s3 cp awslocal s3 cp s3://test-bucket/ecosystem.config.cjs ecosystem.config_downloaded.cjs 
+  awslocal s3 cp s3://test-bucket/ecosystem.config.cjs ecosystem.config_downloaded.cjs 
 ```
 
 ```shell
-#destroy the bucket (force to remove bucket with any images in it)
-awslocal s3 rb s3://test-bucket --force
+  awslocal s3 rb s3://test-bucket --force
 ```
 
 _Proof that such kind of work is ok to know the basics of aws cli
