@@ -5,26 +5,25 @@
 
 * Show the initial code and explain it
   * Check that all prerequisites are installed
-      * Docker
-      * aws
-      * awslocal
+      * [Docker](https://docs.docker.com/engine/install/)
+      * [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+      * [awslocal](https://docs.localstack.cloud/user-guide/integrations/aws-cli/#localstack-aws-cli-awslocal)
         ```shell
-          docker -v && \
-          aws --version  && \
-          awslocal --version
+          echo "Docker: $(docker -v)" && \
+          echo "AWS-CLI: $(aws --version)"&& \
+          echo "AWS-LOCAL: $(awslocal --version)"
         ```
       * aws credentials and profiles created
         ```shell
           cat ~/.aws/config && cat ~/.aws/credentials
         ```
-      * localstack account created and activated hobby plan
-      [LocalStack Dashboard -->](https://app.localstack.cloud/workspace/members) 
+      * [localstack account created and activated hobby plan](https://app.localstack.cloud/workspace/members)
 
 <details style="margin-inline-start:24px">
     <summary style="font-size: 24px">Interactive Part</summary>
 
 * Create directory for docker
-    * Add the services into docker-compose for postgres and localstack. And each line explained
+    * Add the services into docker-compose for postgres and localstack.
     * Add .env file for postgres
     * Add helper scripts into root package.json
     * Start the docker services
