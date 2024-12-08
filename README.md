@@ -64,15 +64,13 @@ but completely not sufficient to deal with complex infrastructure settings_
     <summary style="font-size: 32px;">02 - Primitive automation example</summary>
 
 * Describe `scripts` directory created in the root of the project
-* Some scripts added form the start
 
 <details style="margin-inline-start:24px">
  <summary style="font-size: 24px">Interactive Part</summary>
 
 ### Interactive part
 
-* Run all scripts in `/scripts` directory in a sequence
-* Check that /register /login /users endpoint are working
+* Run all scripts related to the api gateway in `/scripts` directory in a sequence
 * Describe and show with example of pre-created script for API Gateway why it is not optimal
 
 </details>
