@@ -120,15 +120,18 @@ but completely not sufficient to deal with complex infrastructure settings_
   * Check the prerequisites
 
 ```shell
+   echo "CDK - $(cdk --version)" &&
+   echo "CDK-LOCAL - $(cdklocal --version)"
 
-echo "CDK - $(cdk --version)" && \
-echo "CDK-LOCAL - $(cdklocal --version)"
 ```
 
 <details style="margin-inline-start:24px">
 <summary style="font-size: 24px">Interactive part</summary>
 
-* Init the cdk application `mkdir app && cd app && cdk init app --language typescript`
+* Init the cdk application 
+  ```shell
+     mkdir cdk-infra && cd cdk-infra && cdk init app --language typescript
+  ```
 * Jump to the source for a bit
 
 </details>
