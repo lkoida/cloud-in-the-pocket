@@ -13,7 +13,7 @@
           echo "AWS-CLI: $(aws --version)"&& \
           echo "AWS-LOCAL: $(awslocal --version)"
         ```
-      * aws credentials and profiles created
+      * [aws credentials and profiles created](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-files.html)
         ```shell
           cat ~/.aws/config && cat ~/.aws/credentials
         ```

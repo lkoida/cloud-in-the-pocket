@@ -3,7 +3,6 @@
 /.idea
 
 .env
-.env.*
 /docker/volume/
 
 **/http-client.private.env.json
