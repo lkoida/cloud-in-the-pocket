@@ -96,11 +96,15 @@ but completely not sufficient to deal with complex infrastructure settings_
 <details style="margin-inline-start:24px">
  <summary style="font-size: 24px;">Interactive part</summary>
 
-* Update docker-compose to have the localstack scripts directory mounted
+* Update `docker-compose.yaml` to have the localstack scripts directory mounted
 * Move there some scripts and describe how this stuff works
-* Make all files in `localstack_scripts` directory executable by running `chmod -R +x docker/localstack_scripts`
-* Add `"lambda:create": "./scripts/4_create-lambda.sh"` to npm scripts section
-* Add authenticator and users lambdas to localstack from the `npm scripts`
+  ```shell
+      mkdir docker/localstack_scripts && cp -R scripts/[1-3]_*.sh docker/localstack_scripts
+  ```
+* Make all files in `localstack_scripts` directory executable by running 
+  ```shell
+    chmod -R +x docker/localstack_scripts
+  ```
 * Show why this already a better solution but still there is a room for improvement
 
 </details>
