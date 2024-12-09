@@ -148,9 +148,6 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 * Have all previously created code in place
 * Describe what already created - just to save time
-  * Add helpers into root package json for:
-    * secrets
-    * emails
   * Run docker containers
     * Run dump.sql file
     * Run secrets.sh (explain)
