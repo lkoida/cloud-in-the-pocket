@@ -130,9 +130,13 @@ but completely not sufficient to deal with complex infrastructure settings_
 
 * Init the cdk application 
   ```shell
-     mkdir cdk-infra && cd cdk-infra && cdk init app --language typescript
+     mkdir cdk-infra && cd cdk-infra && cdk init app --language typescript --generate-only
   ```
 * Jump to the source for a bit
+* Install all dependencies
+* export profile variable `export AWS_PROFILE=localstack`
+* build the project `npm run build`
+* run basic commands like `cdklocal bootstrap`, `cdklocal synth`, `cdklocal deploy`, `cdklocal destory`
 
 </details>
 </details>
