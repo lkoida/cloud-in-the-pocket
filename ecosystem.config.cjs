@@ -23,6 +23,12 @@ module.exports = {
             cwd: './lambdas/user',
             script: "npm",
             args: "run dev"
+        },
+        {
+          name: "cdk",
+          cwd: './cdk-infra',
+          script: "npm",
+          args: "run watch"
         }
     ]
 };
