@@ -17,6 +17,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "./localstack_scripts:/etc/localstack/init/ready.d/" # this could be used as a part of automation of the localstack startup
     networks:
       - dev
 
