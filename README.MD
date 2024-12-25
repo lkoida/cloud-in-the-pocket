@@ -3,7 +3,7 @@
 #### Source code for presentation about usage LocalStack in development of cloud based applications managed by __AWS__
 
 ## Diagram of the TO-DO application
-![Cloud_In_the_Pocket.diagram.png](presentation/ing-bkp/img/Cloud_In_the_Pocket.diagram.png)
+![Cloud_In_the_Pocket.diagram.png](presentation/img/Cloud_In_the_Pocket.diagram.png)
 
 ## Prerequisites
 1. aws-cli installed -[link to installation guide](https://docs.localstack.cloud/user-guide/integrations/aws-cli/#aws-cli)
@@ -44,5 +44,18 @@
 2. 02-todo (the same folders)
     1. scripts with some stuff should be added, maybe for presentation purposes I'll add some manual updates for scripts folder
         1. to provide the scripts to create the secrets, lambdas(except the attachments) API Gateway should be already there, buckets, SQS
-3. 03-todo ()
+3. 03-todo 
+   1. Evaluation of the scripts approach, introducing the Localstack stages of the readiness
+4. 04-todo
+   1. Introducing the CDK approach to develop the application
+5. 05-todo
+   1. Have all in place
+   2. Main focus of the presentation was on that branch
+
+
+### TODO
+1. Finish the code - provide start\end scripts for each branch to have more code explained.
+2. Finish the all services provided in 05-todo branch section
+3. Make the more step-by-step guide for different environments approach
+4. Provide example of deployment of that app into real AWS
 
